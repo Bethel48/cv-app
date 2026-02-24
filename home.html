@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Home - CV App</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<div class="home-container">
-    <h1>Welcome to My CV</h1>
+<div class="container">
 
-    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+    <header>
+        <h1>POSSIBLE EJIKE EJIOBI</h1>
+        <p class="location">📍 Lagos, Nigeria</p>
+        <p>Email: <span id="userEmail"></span></p>
+    </header>
 
-    <p><strong>Skills:</strong> HTML, CSS, JavaScript, Firebase</p>
-    <p><strong>Experience:</strong> Web Developer</p>
+    <section class="card">
+        <h2>Professional Summary</h2>
+        <p>
+            Aspiring <strong>Frontend Developer</strong> transitioning into tech with a passion for building clean,
+            responsive, and user-friendly web interfaces.
+        </p>
+    </section>
 
-    <br>
-    <button onclick="logoutUser()">Logout</button>
+    <nav class="navbar">
+        <a href="home.html" id="homeLink">Home</a>
+        <a href="skills.html" id="skillsLink">Skills</a>
+        <a href="experience.html" id="experienceLink">Experience</a>
+        <button onclick="logoutUser()">Logout</button>
+    </nav>
+
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBEFF2WqQfjxZh96oOblBF68qclJ9QVCU0",
-  authDomain: "cv-project-147f1.firebaseapp.com",
-  projectId: "cv-project-147f1",
-  storageBucket: "cv-project-147f1.firebasestorage.app",
-  messagingSenderId: "1044300835712",
-  appId: "1:1044300835712:web:a774b91e97a848cee26f65"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Protect page + show user email
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        document.getElementById("userEmail").textContent = user.email;
-    } else {
-        window.location.href = "index.html";
-    }
-});
-
-// Logout
-window.logoutUser = function () {
-    signOut(auth)
-        .then(() => {
-            window.location.href = "index.html";
-        })
-        .catch((error) => {
-            alert(error.message);
-        });
-};
-</script>
+<script type="module" src="js/index.js"></script>
 
 </body>
 </html>

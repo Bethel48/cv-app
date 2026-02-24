@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Login - CV App</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -10,49 +9,14 @@
 <div class="login-container">
     <h2>Login to View CV</h2>
 
-    <input type="email" id="email" placeholder="Enter Email" required>
-    <input type="password" id="password" placeholder="Enter Password" required>
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="password" id="password" placeholder="Enter Password">
 
     <button onclick="loginUser()">Login</button>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBEFF2WqQfjxZh96oOblBF68qclJ9QVCU0",
-  authDomain: "cv-project-147f1.firebaseapp.com",
-  projectId: "cv-project-147f1",
-  storageBucket: "cv-project-147f1.firebasestorage.app",
-  messagingSenderId: "1044300835712",
-  appId: "1:1044300835712:web:a774b91e97a848cee26f65"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Make login function global so button can access it
-window.loginUser = function () {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (!email || !password) {
-        alert("Please enter email and password.");
-        return;
-    }
-
-    signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            alert("Login successful!");
-            window.location.href = "home.html";
-        })
-        .catch((error) => {
-            alert(error.message);
-        });
-};
-</script>
+<!-- Single JS file -->
+<script type="module" src="js/index.js"></script>
 
 </body>
 </html>

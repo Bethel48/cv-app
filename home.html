@@ -10,8 +10,8 @@
 <div class="home-container">
     <h1>Welcome to My CV</h1>
 
-    <p><strong>Name:</strong> Your Name</p>
-    <p><strong>Email:</strong> your@email.com</p>
+    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+
     <p><strong>Skills:</strong> HTML, CSS, JavaScript, Firebase</p>
     <p><strong>Experience:</strong> Web Developer</p>
 
@@ -32,22 +32,22 @@ const firebaseConfig = {
   appId: "1:1044300835712:web:a774b91e97a848cee26f65"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Protect page (redirect if not logged in)
+// Protect page + show user email
 onAuthStateChanged(auth, (user) => {
-    if (!user) {
+    if (user) {
+        document.getElementById("userEmail").textContent = user.email;
+    } else {
         window.location.href = "index.html";
     }
 });
 
-// Logout function
+// Logout
 window.logoutUser = function () {
     signOut(auth)
         .then(() => {
-            alert("Logged out successfully!");
             window.location.href = "index.html";
         })
         .catch((error) => {

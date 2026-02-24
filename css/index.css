@@ -106,3 +106,31 @@ header p {
 .login-container button:hover {
     background: #c0392b;
 }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar a, .navbar button {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .login-container {
+        margin: 50px 10px;
+        padding: 20px;
+    }
+
+    .login-container input {
+        width: 95%;
+    }
+}

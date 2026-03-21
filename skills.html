@@ -1,46 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Skills - CV App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - CV App</title>
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-
-<div class="container">
-
+  <div class="container">
     <h1>Skills</h1>
 
     <section class="card">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript (Basic)</li>
-        </ul>
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (Basic)</li>
+      </ul>
     </section>
 
     <section class="card">
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Time Management</li>
-            <li>Problem Solving</li>
-            <li>Customer Service</li>
-        </ul>
+      <h2>Soft Skills</h2>
+      <ul class="skills-list">
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+        <li>Customer Service</li>
+      </ul>
     </section>
 
     <nav class="navbar">
-        <a href="home.html" id="homeLink">Home</a>
-        <a href="skills.html" id="skillsLink">Skills</a>
-        <a href="experience.html" id="experienceLink">Experience</a>
-        <button onclick="logoutUser()">Logout</button>
+      <a href="home.html" id="homeLink">Home</a>
+      <a href="skills.html" id="skillsLink">Skills</a>
+      <a href="experience.html" id="experienceLink">Experience</a>
+      <button type="button" onclick="logoutUser()">Logout</button>
     </nav>
+  </div>
 
-</div>
-
-<script type="module" src="js/index.js"></script>
-
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>

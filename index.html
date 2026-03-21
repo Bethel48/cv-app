@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login - CV App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - CV App</title>
+  <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-
-<div class="login-container">
+  <div class="login-container">
     <h2>Login / Register to View CV</h2>
 
-    <input type="email" id="email" placeholder="Enter Email">
-    <input type="password" id="password" placeholder="Enter Password">
+    <input type="email" id="email" placeholder="Enter Email" />
+    <input type="password" id="password" placeholder="Enter Password" />
 
-    <button onclick="loginUser()">Login</button>
-    <button onclick="registerUser()">Register</button>
-</div>
+    <button type="button" onclick="loginUser()">Login</button>
+    <button type="button" onclick="registerUser()">Register</button>
+  </div>
 
-<button onclick="loginUser()">Login</button>
-<button onclick="registerUser()">Register</button>
-
-<!-- Single JS file -->
-<script type="module" src="js/index.js"></script>
-
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
